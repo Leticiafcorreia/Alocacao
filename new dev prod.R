@@ -37,14 +37,14 @@ collect_var_data<- function (mytable, variable){
 
 convert_levels<- function(level_column, metadata_level){
   tmp<- copy(metadata_level)
+  tmp<- as.matrix(tmp)
   i = 1
   for(i in 1:dim(tmp)[1]){
-    
     pattern<- tmp[i, 1]
     to_go<- tmp[i, 2]
-    level_column<- lapply(level_column, function(s) gsub(pattern, to_go, "Teens 2.1"))
-    i = 1 +i
+    level_column<-  gsub(as.character(pattern), as.character(to_go), level_column)
   }
+  return(level_column)
 }
 
 
