@@ -74,6 +74,9 @@ setnames(data_list$tb_dm_equivalencia, 'Nivel', 'candidate_level')
 up_to_date_vol_x<- up_to_date_vol
 y<- convert_levels(up_to_date_vol_x$candidate_level, metadata_level)
 
+up_to_date_vol_x<- up_to_date_vol
+up_to_date_vol_x$candidate_level<- convert_levels(up_to_date_vol_x$candidate_level, metadata_level)
+up_to_date_vol_x_2<- up_to_date_vol_x
 
 # Free memory
 gc()
